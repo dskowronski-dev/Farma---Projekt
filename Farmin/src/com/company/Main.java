@@ -5,7 +5,7 @@ import com.company.Player;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj nick, naciśnij enter i wpisz nr farmy od 1 do 6");

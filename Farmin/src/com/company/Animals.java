@@ -3,8 +3,8 @@ package com.company;
 public class Animals {
 
     public Double weight;
-    final String species;
-    public Double value;
+    static String species;
+    public static Double value;
     public static final Double DEFAULT_PIG_WEIGHT = 100.0;
     public static final Double DEFAULT_COW_WEIGHT = 200.0;
     public static final Double DEFAULT_CHICKEN_WEIGHT = 2.0;
@@ -34,6 +34,7 @@ public class Animals {
         this.species = species;
         this.weight = weight;
     }
+
 
 
 

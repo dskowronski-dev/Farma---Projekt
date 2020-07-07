@@ -2,9 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Player {
+public class Player implements Buy {
 
-    public Double cash = 20000.0;
+    public static Double cash = 20000.0;
     private Farm[] farm;
     private static Integer value;
 
@@ -24,7 +24,7 @@ public class Player {
 
     static Scanner scan = new Scanner(System.in);
 
-    public void menu(){
+    public void menu() throws Exception {
         System.out.println("Menu:"
                 + "\n 1. Sprawdź stan konta."
                 + "\n 2. Kup zwierzę."
@@ -38,6 +38,11 @@ public class Player {
         switch (value) {
             case 1:
                 stanKonta();
+            case 2:
+                System.out.println("Podaj nazwę zwierzęta które chcesz kupić: ");
+                //Animals.species = scan.nextLine();
+                Animals.species = "dog";
+                buy(Animals.value, Animals.species);
 
             case 6:
                 koniecGry();
@@ -61,4 +66,9 @@ public class Player {
         return this.cash;
     }
 
+    @Override
+    public void buy(Double price, String species) throws Exception {
+        System.out.println("Kupiłeś " + species + " za " +price );
+        Player.cash -= price;
+    }
 }
